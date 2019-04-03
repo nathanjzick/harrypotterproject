@@ -41,4 +41,4 @@ for b in os.listdir(os.getcwd()):
           pos_counts['X'] += 1
   # sorts dictionary to show most frequent part of speech first
   pos_counts = sorted(pos_counts.items(), reverse = True, key = lambda x:x[1])
-  print(f'{b} {pos_counts}')
+  print(f'{b} {pos_counts}\n')
