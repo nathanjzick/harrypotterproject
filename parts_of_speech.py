@@ -1,4 +1,6 @@
 import nltk, os
+import matplotlib.pyplot as plt
+
 os.chdir('C:\\Users\\Nathan\\Documents\\LING 360\\Final Project\\text')
 # loop through books in the text directory
 for b in os.listdir(os.getcwd()):
@@ -41,4 +43,11 @@ for b in os.listdir(os.getcwd()):
           pos_counts['X'] += 1
   # sorts dictionary to show most frequent part of speech first
   pos_counts = sorted(pos_counts.items(), reverse = True, key = lambda x:x[1])
-  print(f'{b} {pos_counts}\n')
+  # visualize dictionaries
+  fig, ax = plt.subplots()
+  graph = ax.bar(dict(pos_counts).keys(), dict(pos_counts).values())
+  ax.set_title(b)
+  plt.show(block=False)
+  # saves image as pdf
+  fig.savefig(f'C:\\Users\\Nathan\\Documents\\LING 360\\Final Project\\charts\\pos_{b}.pdf', bbox_inches='tight')
+  plt.close()
