@@ -1,9 +1,4 @@
 from selenium import webdriver
-from time import sleep
-from selenium.webdriver.common.keys import Keys
-from bs4 import BeautifulSoup
-import pandas as pd
-import os
 
 # sets path to where chrome driver is
 driver = webdriver.Chrome('C:\\Users\\Nathan\\chromedriver\\chromedriver.exe')
